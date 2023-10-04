@@ -14,6 +14,7 @@ class AuthController {
     if (!user_id) {
       return next(new APIError("Occur Error when you register", 400));
     }
+    
     res.status(201).json({
       Success: true,
       id: user_id,
@@ -37,7 +38,7 @@ class AuthController {
     const { mobile, password } = req.body;
 
     const user = await this.authService.login(mobile, password);
-    
+
     if (user.message) {
       res.status(400).json({
         Success: false,
