@@ -37,6 +37,7 @@ class AuthController {
     const { mobile, password } = req.body;
 
     const user = await this.authService.login(mobile, password);
+    
     if (user.message) {
       res.status(400).json({
         Success: false,
