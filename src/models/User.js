@@ -24,6 +24,17 @@ module.exports = (sequelize, Sequelize) => {
     mobile: {
       type: Sequelize.STRING,
     },
+    limit: {
+      type: Sequelize.INTEGER,
+      defaultValue: 0,
+    },
+    block: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    },
+    dateLimit: {
+      type: Sequelize.DATE,
+    },
     password: {
       type: Sequelize.STRING,
     },
